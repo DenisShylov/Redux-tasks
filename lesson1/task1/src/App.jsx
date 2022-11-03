@@ -1,9 +1,9 @@
 import React from 'react';
 import ThemedButton from './ThemedButton';
-import { ThemeContext } from './themes-context';
+import { ThemeContext } from './ThemeContext';
 
 import './index';
-import { themes } from './themes-context';
+import { themes } from './ThemeContext';
 
 class App extends React.Component {
   state = {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeContext } from './themes-context';
+import { ThemeContext } from './ThemeContext';
 
 class ThemedButton extends React.Component {
   render() {
