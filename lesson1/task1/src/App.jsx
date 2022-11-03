@@ -1,23 +1,21 @@
 import React from 'react';
-import ThemedButton from './ThemedButton';
-import { ThemeContext } from './ThemeContext';
-
-import './index';
-import { themes, ThemesContext } from './ThemeContext';
+import ThemedButton from './ThemedButton.jsx';
+import { themes, ThemesContext } from './themes.js';
 
 class App extends React.Component {
   state = {
-    theme: themes.dark,
+    theme: themes.light,
   };
 
   toggleTheme = () => {
     const newTheme =
-      this.state.theme === themes.dark ? themes.light : themes.dark;
+      this.state.theme === themes.light ? themes.dark : themes.light;
 
     this.setState({
       theme: newTheme,
     });
   };
+
   render() {
     return (
       <div>
