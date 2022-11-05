@@ -22,12 +22,12 @@ export const reset = () => {
   };
 };
 
-const initialState = {
+const initState = {
   value: 0,
   history: [],
 };
 
-const counterReducer = (state = initialState, action) => {
+const counterReduser = (state = initState, action) => {
   switch (action.type) {
     case INCREMENT:
       return {
@@ -44,9 +44,10 @@ const counterReducer = (state = initialState, action) => {
         value: 0,
         history: [],
       };
+
     default:
       return state;
   }
 };
 
-export const store = createStore(counterReducer);
+export const store = createStore(counterReduser);
