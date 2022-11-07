@@ -1,5 +1,5 @@
 import { decrement, increment, reset } from './counter.actions';
-import { addUsers, deleteUsers, updateUsers } from './users.actions';
+import { addUser, deleteUser, updateUser } from './users.actions';
 import store from './store';
 
 store.subscribe(() => {
@@ -14,7 +14,7 @@ store.dispatch(increment());
 store.dispatch(increment());
 store.dispatch(decrement());
 
-store.dispatch(addUsers({ id: 1, name: 'Tom' }));
-store.dispatch(addUsers({ id: 2, name: 'T' }));
-store.dispatch(updateUsers(2, { name: 'Timi', age: 22 }));
+store.dispatch(addUser({ id: 1, name: 'Tom' }));
+store.dispatch(addUser({ id: 2, name: 'T' }));
+store.dispatch(updateUser(2, { name: 'Timi', age: 22 }));
 // store.dispatch(deleteUsers(1));
