@@ -9,8 +9,8 @@ const cartReducer = (state = { products: [] }, action) => {
       };
 
     case REMOVE_PRODUCT: {
-      const deleteProduct = [...state.products].filter(
-        (prod) => prod.payload !== action.productId
+      const deleteProduct = state.products.filter(
+        (prod) => prod.id !== action.payload
       );
       return {
         ...state,

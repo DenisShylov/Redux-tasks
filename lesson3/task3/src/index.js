@@ -10,5 +10,5 @@ store.subscribe(() => {
 store.dispatch(setUser({ id: 4, name: 'DDDD' }));
 store.dispatch(setLanguage('ru'));
 // store.dispatch(removeUser());
-store.dispatch(addProduct({ id: '76', name: 'milk' }));
+store.dispatch(addProduct({ id: 76, name: 'milk' }));
 store.dispatch(removeProduct(76));
