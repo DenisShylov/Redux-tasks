@@ -12,7 +12,10 @@ const cartReducer = (state = { products: [] }, action) => {
       const deleteProduct = [...state.products].filter(
         (prod) => prod.payload !== action.productId
       );
-      return { products: deleteProduct };
+      return {
+        ...state,
+        products: deleteProduct,
+      };
     }
 
     default:
