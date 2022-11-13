@@ -13,18 +13,26 @@ class Users extends Component {
 
     this.props.createUsers(newUser);
   };
+
   render() {
-    const { users } = this.props;
+    const { users, deleteUser } = this.props;
 
     return (
       <div className="users">
         <button className="users__create-btn" onClick={this.onUserCreate}>
           Create User
         </button>
+
         <ul className="users__list">
           {users.map(({ name, id }) => (
             <li key={id} className="users__list-item">
               {name}
+              <button
+                onClick={() => deleteUser(id)}
+                className="users__delete-btn"
+              >
+                +
+              </button>
             </li>
           ))}
         </ul>
@@ -40,6 +48,7 @@ const mapState = (state) => {
 
 const mapDispatch = {
   createUsers: userActions.addUser,
+  deleteUser: userActions.deleteUser,
 };
 
 const connector = connect(mapState, mapDispatch);
