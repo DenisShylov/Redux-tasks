@@ -1,5 +1,7 @@
-const usersListSeleclor = (state) => {
-  return state;
+export const usersListSeleclor = (state) => {
+  return state.usersList;
 };
 
-export default usersListSeleclor;
+export const currentPageSelector = (state) => {
+  return state.currentPage;
+};

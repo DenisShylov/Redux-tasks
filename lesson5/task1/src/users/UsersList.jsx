@@ -1,15 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { nextPage, prevPage } from '../users.actions.js';
-import usersListSeleclor from '../users.selectors.js';
+import { usersListSeleclor, currentPageSelector } from '../users.selectors.js';
 import Pagination from './Pagination.jsx';
 import User from './User.jsx';
 
-const UsersList = ({ users, nextPage, prevPage }) => {
+const UsersList = ({ usersList, currentPage, nextPage, prevPage }) => {
   const itemsPerPage = 3;
-  const { usersList, currentPage } = users;
-  const startIndex = currentPage * itemsPerPage;
 
+  const startIndex = currentPage * itemsPerPage;
+  console.log(usersList);
   return (
     <>
       <Pagination
@@ -30,7 +30,8 @@ const UsersList = ({ users, nextPage, prevPage }) => {
 
 const mapState = (state) => {
   return {
-    users: usersListSeleclor(state),
+    usersList: usersListSeleclor(state),
+    currentPage: currentPageSelector(state),
   };
 };
 
