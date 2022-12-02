@@ -12,9 +12,7 @@ export const showSpinner = () => {
 export const userDataReceived = (userData) => {
   return {
     type: USER_DATA_RECEIVED,
-    payload: {
-      userData,
-    },
+    payload: userData,
   };
 };
 

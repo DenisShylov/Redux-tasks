@@ -7,8 +7,7 @@ const UserInfo = ({ userData, isFetching }) => {
   if (isFetching === true) {
     return <Spinner />;
   }
-  console.log(userData);
-  console.log(isFetching);
+
   if (!userData) {
     return null;
   }
