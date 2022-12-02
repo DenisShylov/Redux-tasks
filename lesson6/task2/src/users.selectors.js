@@ -1,7 +1,7 @@
-export const usersListSeleclor = (state) => {
-  return state.usersList;
+export const userDataSelector = (state) => {
+  return state.users.userData;
 };
 
-export const currentPageSelector = (state) => {
-  return state.currentPage;
+export const isFetchingSelector = (state) => {
+  return state.users.isFetching;
 };

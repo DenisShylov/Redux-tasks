@@ -1,14 +1,28 @@
-export const NEXT_PAGE = 'USER/NEXT_PAGE';
-export const PREV_PAGE = 'USER/PREV_PAGE';
+import { getUserData } from './users.gateway';
 
-export const nextPage = () => {
+export const SHOW_SPINNER = 'SHOW_SPINNER';
+export const USER_DATA_RECEIVED = 'USER_DATA_RECEIVED';
+const baseUrl = 'https://api.github.com/users';
+export const showSpinner = () => {
   return {
-    type: NEXT_PAGE,
+    type: SHOW_SPINNER,
   };
 };
 
-export const prevPage = () => {
+export const userDataReceived = (userData) => {
   return {
-    type: PREV_PAGE,
+    type: USER_DATA_RECEIVED,
+    payload: {
+      userData,
+    },
+  };
+};
+
+export const fetchUserData = (userName) => {
+  return function (dispatch) {
+    dispatch(showSpinner());
+    fetch(`${baseUrl}/${userName}`)
+      .then((response) => response.json())
+      .then((userData) => dispatch(userDataReceived(userData)));
   };
 };
