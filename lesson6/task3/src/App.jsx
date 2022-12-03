@@ -1,15 +1,13 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import store from './store';
+import store from './weather/store';
 import './styles.scss';
-import UsersList from './users/UsersList';
+import Weather from './weather/Weather';
 
 const App = () => {
   return (
     <Provider store={store}>
-      <div>
-        <UsersList />
-      </div>
+      <Weather />
     </Provider>
   );
 };

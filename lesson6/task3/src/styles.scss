@@ -7,44 +7,34 @@ body {
 }
 
 #root {
-  height: 100vh;
   display: flex;
+  height: 100vh;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.users {
-  list-style-type: none;
-  padding: 0;
-}
+.weather {
+  width: 100%;
+  max-width: 300px;
 
-.user {
-  margin: 8px;
-  width: 150px;
-  display: flex;
-
-  &__age {
-    font-weight: 700;
-    opacity: 0.5;
-    margin-left: auto;
+  &__title {
+    word-spacing: 16px;
+    font-weight: 300;
   }
 }
 
-.pagination {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.cities-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-.btn {
-  height: 32px;
-  color: #fff;
-  border-radius: 8px;
-  width: 64px;
-  outline: none;
-  border: none;
-  text-transform: uppercase;
-  padding: 8px;
-  cursor: pointer;
-  background-color: green;
+.city {
+  display: flex;
+  line-height: 32px;
+
+  &__temperature {
+    margin-left: auto;
+  }
 }
